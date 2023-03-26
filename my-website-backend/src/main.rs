@@ -1,5 +1,6 @@
 use actix_web::{get, App, HttpResponse, HttpServer, Responder};
 use serde::Serialize;
+use actix_cors::Cors;
 
 #[derive(Serialize)]
 struct Project {
@@ -31,7 +32,10 @@ async fn projects() -> impl Responder {
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
+        let cors = Cors::permissive(); // or configure as per your requirements
+
         App::new()
+            .wrap(cors)
             .service(index)
             .service(projects)
     })
