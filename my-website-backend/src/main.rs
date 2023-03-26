@@ -17,12 +17,12 @@ async fn index() -> impl Responder {
 async fn projects() -> impl Responder {
     let project_list = vec![
         Project {
-            name: "Project 1".to_string(),
-            description: "Description for Project 1".to_string(),
+            name: "Serverless".to_string(),
+            description: "Serverless Architecture that uses AWS lambda and reads data from DynamoDB and writes to AWS S3 bucket".to_string(),
         },
         Project {
-            name: "Project 2".to_string(),
-            description: "Description for Project 2".to_string(),
+            name: "Machine Learning with Azure Databricks".to_string(),
+            description: "Heart Attack Prediction tool that uses Azure Databricks AutoML to train a model using heart prediction analysis data from Kaggle. Built a fast API service and deployed it on AWS ECR. Service is accessible via AWS App Runner hosted domain ".to_string(),
         },
     ];
 
